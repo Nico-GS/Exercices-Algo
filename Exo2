@@ -1,0 +1,42 @@
+class Point (x, y)
+
+    x: double
+    y: double
+
+START
+    fun getX()
+    START
+        return x
+    END
+
+    fun getY()
+    START
+        return y
+    END
+
+    fonction setX(x : double)
+    START
+        x = double
+    END
+
+    fun setY(y: double)
+    START
+        y = double
+    END
+
+    START
+        print  "x : " + str(x)
+        print  "y : " + str(y)
+    END
+
+END
+
+    main()
+        p: Point
+
+    START
+        p.setX(1)
+        p.setY(2)
+        p.toString()
+
+    END
