@@ -1,0 +1,34 @@
+class Circle(radius, point) 
+
+    radius : int
+    point = Point()
+    
+    START
+        fun getRadius()
+        START
+            return radius
+        END
+
+        fun setRadius(radius : int)
+        START
+            radius = int
+        END
+
+        toString()
+        
+        START
+            print "radius : " + str(radius)
+        END
+
+        fun area()
+        START
+            air : int
+            air = radius^2
+        END
+
+        fun containPoint(point)
+        START
+        
+            
+
+    END
