@@ -1,7 +1,7 @@
 class Point (x, y)
 
-    x: double
-    y: double
+    x: int
+    y: int
 
 START
     fun getX()
@@ -14,14 +14,14 @@ START
         return y
     END
 
-    fonction setX(x : double)
+    fonction setX(x : int)
     START
-        x = double
+        x = int
     END
 
-    fun setY(y: double)
+    fun setY(y: int)
     START
-        y = double
+        y = int
     END
 
     START
