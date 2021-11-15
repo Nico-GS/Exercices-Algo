@@ -1,0 +1,57 @@
+class Hippopotamus(name, weight, tusksSize)
+
+    name: string
+    weight: double
+    tusksSize: double
+    
+    function eat ()
+      START
+        weight += 500
+      END
+
+    fonction swim ()
+      START
+        weight -= 200
+      END
+
+    fight (Hippopotamus badGuy)
+    START
+        IF  
+            tusksSize > badGuy.tusksSize
+            print "You won"
+        ELSE
+            print "You lost"
+        ENDIF
+    END
+    
+    START
+        print   "name: " + str(name) + 
+        print   "weight: " + str(weight) + 
+        print   "tusksSize: " + str(tusksSize)
+    END
+
+
+main()
+    hip1: Hippopotamus
+    hip2: Hippopotamus
+    hip3: Hippopotamus
+    
+START
+    hip1("Hollande", 3000, 4)
+    hip2("Larcher", 5000, 6)
+
+    hip1.fight(hip2)
+    hip3("Sarkozy", 1000, 2)
+
+    FOR i from 1 to 21
+    
+        FOR j from 1 to 15
+            hip3.eat().eat().swim().swim().swim()
+        ENDFOR
+        
+        hip3.toString()
+        print "Time to sleep" + str(i)
+        
+    ENDFOR
+
+END
