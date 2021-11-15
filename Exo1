@@ -14,7 +14,7 @@ class Hippopotamus(name, weight, tusksSize)
         weight -= 200
       END
 
-    fight (Hippopotamus badGuy)
+    fun fight(Hippopotamus badGuy)
     START
         IF  
             tusksSize > badGuy.tusksSize
@@ -31,6 +31,7 @@ class Hippopotamus(name, weight, tusksSize)
     END
 
 
+// Test fight
 main()
     hip1: Hippopotamus
     hip2: Hippopotamus
