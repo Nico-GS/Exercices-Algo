@@ -4,6 +4,7 @@ class Circle(radius, point)
     point = Point()
     
     START
+    
         fun getRadius()
         START
             return radius
