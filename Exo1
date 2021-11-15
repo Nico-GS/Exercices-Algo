@@ -4,12 +4,12 @@ class Hippopotamus(name, weight, tusksSize)
     weight: double
     tusksSize: double
     
-    function eat ()
+    fun eat()
       START
         weight += 500
       END
 
-    fonction swim ()
+    fun swim()
       START
         weight -= 200
       END
@@ -46,7 +46,7 @@ START
     FOR i from 1 to 21
     
         FOR j from 1 to 15
-            hip3.eat().eat().swim().swim().swim()
+            hip3.swim().eat()
         ENDFOR
         
         hip3.toString()
