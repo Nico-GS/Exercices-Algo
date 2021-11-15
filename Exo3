@@ -26,5 +26,48 @@ class Circle(radius, point)
             air : int
             air = radius^2
         END
+        
+        fun containsPoint(point)
+	    START
+		    IF ((point.x - point.x) ²+ (point.y-point.y)² = radius^2)
+			    return true
+		    ELSE
+			    return false
+		    ENDIF
+	    END
+        
+        fun showCircle()
+	    END
+		return "Radius : " + radius + " center : " + point.getX() " - "+ point.getY() 
+	    END
+        
+        testCircle()
+
+        c1: Circle  
+        p1: Point
+        p2: Point
+
+            START
+	        p1 : Point(5, 6)
+	        c1 : Circle(p1, 6)
+
+	        print c1.showCircle // Radius 4 , Center 3 , 4
+	        print c1.area()
+
+	        p2 : Point(2, 3)
+	
+	        IF (c1.containsPoint(p2))
+		        print "Belong to the circle"
+	        ELSEIF
+		        print "Don't belong to the circle"
+	        ENDIF
+
+	        p3 : Point(5, 0)
+
+	        IF (c1.containsPoint(p2))
+		        print 'Belong to the circle"
+	        ELSE
+		        print 'Don't belong to the circle"
+	        ENDIF
 
     END
