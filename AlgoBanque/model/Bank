@@ -1,0 +1,7 @@
+class Bank
+
+	id : long
+	user : User
+	accountNumber : String
+	amount : Double
+	date : Date

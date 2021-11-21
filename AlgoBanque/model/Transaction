@@ -1,0 +1,8 @@
+class Transaction
+
+	id : long
+	sender : User
+	receiver : User
+	description : string
+	amount : double
+	date : Date

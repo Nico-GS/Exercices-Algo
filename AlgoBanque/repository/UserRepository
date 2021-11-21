@@ -1,0 +1,3 @@
+interface UserRepository extends JpaRepository<User, Long>
+
+	User : Optional (findByEmail : email(String))

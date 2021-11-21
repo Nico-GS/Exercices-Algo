@@ -1,0 +1,3 @@
+interface BankRepository extends JpaRepository <Bank, Long>
+
+	Bank : List (findAllByUser : User(user))

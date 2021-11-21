@@ -1,0 +1,34 @@
+class TransactionService
+
+	userRepository : UserRepository
+	transactionRepository : TransactionRepository
+
+
+	// Vérifier si un paiement est autorisé ou non
+	fun authorizedPAyment(fromUser:User, toUser:User, total : double)
+		return fromUser.getAmount > total
+
+	// Procéder au paiement
+	fun makePayment (transaction Transaction)
+		IF (userRepository.findById(transaction.getSenderID).isEmpty)
+			transaction.getAmount <= 0
+			return false
+
+		amount : double = transaction.getAmount
+		fromUser : User
+		toUser : User
+
+		IF (authorizedPayment(fromUser, toUser, total))
+			fromUser.setAmount(fromUser.getAmount - amount)
+			toUser.setAmount(toUser.getAmount + amount)
+			transaction : new Transaction
+			transaction.setSender(fromUser)
+			transaction.setReceiver(toUser)
+			transaction.setAmount(amount)
+			transaction.setDate(new Date)
+			transaction.setDescription(transaction.getDescription)
+			transactionRepository.save(transaction)
+			userRepository.save(fromUser)
+			userRepository.save(toUser)
+		ELSE
+			return false

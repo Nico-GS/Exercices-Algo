@@ -1,0 +1,11 @@
+class Hashing
+
+	bcrypt : JBCrypt
+
+	// Hash mot de passe
+	fun hash(password : String): String
+		return bcrypt.hash(password)
+
+	// Vérifier hash mot de passe
+	fun verify(password : String, hash : String)
+		return bcrypt.verifyHash(password, hash)

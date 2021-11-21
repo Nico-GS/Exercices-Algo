@@ -1,0 +1,42 @@
+class BankService
+
+	bankRepository : BankRepository
+	userService : UserService
+
+	// Créer une transaction
+	fun createBankTransaction (user : User, accountNumber : string)
+		transac : Bank
+		transac setUser(user)
+		transac setAccountNumber(accountNumber)
+		transac setAmount(amount)
+		transac setDate(date : Date)
+		return transac
+
+
+	// Sauvegarder transaction en DB
+	fun save (transac Bank)
+		return bankRepository save(transac)
+
+	// Procéder à la transaction
+	fun processTransaction (bankTransac Bank)
+		IF (bankTransac  getAmount == 0)
+			return false
+
+		user : User (bankTransac.getUser)
+		absAmount : Double = Math.abs(bankTransac.getAmount)
+
+		IF (bankTransac.getAmount > 0)
+			user.setAmount(user.getAmount + absAmount)
+
+		ELSE IF (bankTransac.getAmount < 0 && absAmount <= user.getAmount)
+			user.setAmount(user.getAmount - absAmount)
+
+		ELSE
+			return false
+
+		userService.saveUser(user)
+		return true
+
+		// Trouver une transaction en DB
+		fun findByUser (user : User): bank : List
+			return bankRepository.findAllByUser(user)

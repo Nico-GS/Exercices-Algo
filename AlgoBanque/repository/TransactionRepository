@@ -1,0 +1,3 @@
+interface TransactionRepository extends JpaRepository<Transaction, Long>
+
+	Transaction : List (findAllBySenderOrReceiver : User(first), User(second))

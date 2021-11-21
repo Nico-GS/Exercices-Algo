@@ -1,0 +1,29 @@
+class UserService
+
+	userRepository : UserRepository
+
+
+	// Créer un nouvel utilisateur
+	fun createUser
+		hashPw : String.Hashing
+		user setPassword(hashPw)
+		return userRepository -> save (user)
+
+
+	// Trouver un utilisateur par email
+	fun getByEmail (email : string)
+		return userRepository -> findByEmail(email)
+
+
+	// Identification de l'utilisateur sur l'app
+	fun identify(user : User)
+		getByEmail(user) -> get
+		newHash : string
+		IF (Hashing.verifyAndUpdate), user -> getPassword
+			IF (newHash[0] != null && !newHash[0] isEquals(user.getPassword))
+				user setPassword(newHash)
+				userRepository save(user)
+
+			return true
+
+		return false
